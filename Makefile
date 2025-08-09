@@ -13,6 +13,9 @@ down:
 db:
 	docker compose exec mysql bash
 
+style:
+	docker compose exec php bash vendor/bin/php-cs-fixer fix --dry-run --diff -vvv
+
 setup:
 	cp --update .env.example .env
 

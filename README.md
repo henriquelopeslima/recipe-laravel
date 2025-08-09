@@ -60,6 +60,7 @@ Makefile
 | `make bash`     | Acessa o bash do container PHP          |
 | `make down`     | Para e remove os containers             |
 | `make db`       | Acessa o bash do container MySQL        |
+| `make style`    | Verifica o code style                   |
 | `make setup`    | Configura o ambiente inicial do Laravel |
 
 ---
