@@ -32,6 +32,12 @@ RUN useradd -u 1000 -ms /bin/bash -g developer user
 
 COPY --chown=user:developer . /var/www
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && echo "zend_extension=xdebug.so" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.start_with_request=no" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 USER user
 
 EXPOSE 9000
